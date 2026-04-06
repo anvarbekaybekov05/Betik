@@ -1,0 +1,27 @@
+#Anvarbek Aybekov
+import random
+r=random.randint(1,6)
+print(r)
+r2=random.randint(1,6)
+print(r2)
+if (r%2==0 and r2%2==0): print ("Galatasaray")
+elif (r%2!=0 and r2%2!=0): print ("Fenerbahçe")
+else: print ("Beraberlik")
+
+#-----------------------
+import random
+gs=0;
+fb=0;
+b=0;
+for i in range(3000):
+    r=random.randint(1,6)
+    r2=random.randint(1,6)
+    if (r%2==0 and r2%2==0):
+        gs+=1
+    elif (r%2!=0 and r2%2!=0):
+        fb+=1
+    else:
+        b+=1
+print("Galatasaray: ",gs*3/100,"%")
+print ("Fenerbahçe: ",fb*3/100,"%")
+print("Beraberlik: ",b*3/100,"%")
