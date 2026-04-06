@@ -1,0 +1,141 @@
+import requests
+from bs4 import BeautifulSoup
+
+url='https://www.milligazete.com.tr/arsiv'
+r=requests.get(url)
+soup=BeautifulSoup(r.content,'html.parser')
+list2=soup.find_all("div",{"class":"col-lg-6"})
+for i in list2:
+    for link in i.find_all('a'):
+        my_link=link.get('href')+"\n"
+        base='https://www.milligazete.com.tr'
+        yeni_link='{}{}'.format(base,my_link)
+        print(yeni_link)
+
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+url='https://www.milligazete.com.tr/arsiv'
+r=requests.get(url)
+soup=BeautifulSoup(r.content,'html.parser')
+list2=soup.find_all("div",{"class":"col-lg-6"})
+for i in list2:
+    for link in i.find_all('a'):
+        my_link=link.get('href')+"\n"
+        base='https://www.milligazete.com.tr'
+        yeni_link='{}{}'.format(base,my_link)
+        print(yeni_link)
+        with open("seyran2", "a", encoding='utf-8') as f:
+            f.write(yeni_link+"\n")
+
+urr='https://www.milligazete.com.tr/memurlar-yeni-isteklerini-acikladi-sosyal-medyada-gundem-oldu'
+r=requests.get(urr)
+soup=BeautifulSoup(r.content,{'html.parser'})
+print(soup)
+date=soup.find("time",{"class":"fw-bold"})
+print(date)
+print(date.getText())
+
+import requests
+from bs4 import BeautifulSoup
+urr='https://www.milligazete.com.tr/memurlar-yeni-isteklerini-acikladi-sosyal-medyada-gundem-oldu'
+r=requests.get(urr)
+soup=BeautifulSoup(r.content,{'html.parser'})
+print(soup)
+date=soup.find("time",{"class":"fw-bold"})
+title=soup.find("h1").getText()
+print(title)
+
+
+
+import requests
+from bs4 import BeautifulSoup
+
+url='https://www.milligazete.com.tr/arsiv'
+def url_topla(ur,f_name):
+    r=requests.get(url)
+    soup=BeautifulSoup(r.content,'html.parser')
+    list2=soup.find_all("div",{"class":"col-lg-6"})
+    for i in list2:
+        for link in i.find_all('a'):
+            my_link=link.get('href')+"\n"
+            base='https://www.milligazete.com.tr'
+            yeni_link='{}{}'.format(base,my_link)
+            print(yeni_link)
+            with open(f_name, "a", encoding='utf-8') as f:
+                f.write(yeni_link+"\n")
+file_name="anvar"
+url_topla(url,file_name)
+#-------------------------------------------------------------------------
+import requests
+from bs4 import BeautifulSoup
+urr='https://www.milligazete.com.tr/memurlar-yeni-isteklerini-acikladi-sosyal-medyada-gundem-oldu'
+def icerik_topla():
+    r=requests.get(urr)
+    soup=BeautifulSoup(r.content,{'html.parser'})
+    print(soup)
+    date=soup.find("time",{"class":"fw-bold"})
+    title=soup.find("h1").getText()
+    content=' '
+    icerik=soup.find("div",{'class':'fas fa-euro-sign fa-lg me-1 text-cyan'}).find_all('p')
+    for i in range(len(icerik)):
+        print(type(i))
+        content+=i.getText
+        print(content)
+
+import requests
+from bs4 import BeautifulSoup
+
+url='https://www.milligazete.com.tr/arsiv'
+def url_topla(ur,f_name):
+    r=requests.get(url)
+    soup=BeautifulSoup(r.content,'html.parser')
+    list2=soup.find_all("div",{"class":"col-lg-6"})
+    for i in list2:
+        for link in i.find_all('a'):
+            my_link=link.get('href')+"\n"
+            base='https://www.milligazete.com.tr'
+            yeni_link='{}{}'.format(base,my_link)
+            print(yeni_link)
+            with open(f_name, "a", encoding='utf-8') as f:
+                f.write(yeni_link+"\n")
+file_name="anvar"
+url_topla(url,file_name)
+#-------------------------------------------------------------------------
+import requests
+from bs4 import BeautifulSoup
+urr='https://www.milligazete.com.tr/memurlar-yeni-isteklerini-acikladi-sosyal-medyada-gundem-oldu'
+def icerik_topla(urr,f_icerik):
+    r=requests.get(urr)
+    soup=BeautifulSoup(r.content,{'html.parser'})
+    date=soup.find("time",{"class":"fw-bold"})
+    title=soup.find("h1").getText()
+    content=' '
+    icerik=soup.find("div",{'class':'fas fa-euro-sign fa-lg me-1 text-cyan'}).find_all('p')
+    for i in (icerik):
+        content+=i.getText()
+    son=' {} ; {} ; {} ; {} ;'.format(urr,date,title,content)
+    with open(f_icerik, "a", encoding='utf-8') as f:
+        f.write(son.strip() + "\n")
+
+from ornek2 import *
+f=open('seyran2')
+for i in range(18):
+    try:
+        link=f.readline()
+        icerik_topla(link.strip(),{'seyran3'})
+    except:
+        pass
+
+from ornek2 import *
+f=open('seyran2')
+for i in range(18):
+    try:
+        link=f.readline()
+        icerik_topla(link.strip(),{'seyran3'})
+    except:
+        pass
+
