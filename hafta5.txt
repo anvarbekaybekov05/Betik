@@ -1,0 +1,73 @@
+A=["15:26 Ateşkes umurların da mı?! Terörist İsrail ordusu Lübnan'a yine saldırı düzenledi!",
+"15:25 Dem Parti’den çift taraflı İran açıklaması… Dışardan müdahale olmasın, içeriden rejim değiştirilsin!",
+"15:01 Bakan Uraloğlu'ndan açıklama! Hürmüz Boğazı'ndaki Türk gemilerinin durumu belli oldu",
+"14:37 Yaşadıkları hezi̇meti̇n görüntülenmesi̇ni̇ i̇stemi̇yorlar…. CNN Türk muhabi̇ri̇ ve kameramanı gözaltına alındı",
+"14:36 Shamdasani:İran'da 153 öğrenci ve öğretmenin hayatını kaybettiği saldırıyla ilgili soruşturma çağrısında bulunuyoruz",
+"14:23 Maneviyat herkesi heyecanlandırdı! Gaziantep'te Mukaddes Emanetler Sergisi ziyarete açıldı",
+"14:12 Hangi il kaç vekil çıkaracak! İl il milletvekili sayıları...Artan ve azalan iller",
+"14:07 ABD dezenformasyon çabasında! Bekayi, ABD Özel Temsilcisi Witkoff'u yalanladı"]
+
+from esd import A
+for i in A:
+    son=i.split(' ')
+    for j in range(len(son)):
+        if j==0:
+            print(son[j])
+    else:
+        pass
+-------------------------------------------------------
+for i in range(10):
+    with open("doovlet2.tx","a",encoding='utf-8') as f:
+        f.write("ılyas"+'\n')
+-------------------------------------------------------
+dizi=[]
+with open("doovlet.tx","a",encoding='utf-8') as f:
+    a=f.readline()
+    dizi.append(a)
+    b = f.readline()
+    dizi.append(b)
+    c = f.readline()
+    dizi.append(c)
+    d = f.readline()
+    dizi.append(d)
+yenidizi=[]
+for i in dizi:
+    son=i.split(' ')
+    yenidizi.append(son[0])
+    yenidizi.append(son[1])
+    x=son[2]
+    print(x[1:])
+    y=son[3]
+    yy=y[:5]
+    print(y[:5])
+    yenidizi.append(yy)
+    for i in yenidizi:
+        print(i)
+----------------------------------
+dizi=[]
+with open("doovlet.tx","a",encoding='utf-8') as f:
+    a=f.readline()
+    dizi.append(a)
+    b = f.readline()
+    dizi.append(b)
+    c = f.readline()
+    dizi.append(c)
+    d = f.readline()
+    dizi.append(d)
+yenidizi=[]
+for i in dizi:
+    son=i.split(' ')
+    k=(son[0])
+    m=(son[1])
+    x=son[2]
+    n=x[1:]
+    y=son[3]
+    yy=y[:5]
+    print(yy)
+    dizilim='{}{}{}{}$'.format(k,m,n,yy)
+    yenidizi.append(dizilim)
+
+    for i in yenidizi:
+        print(i)
+-------------------------------------------
+def duzelt (fıle 1,fıle2,satrsayısı):
