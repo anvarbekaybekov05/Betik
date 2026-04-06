@@ -1,0 +1,31 @@
+import yfinance as yf
+import matplotlib.pyplot as plt
+import pandas as pd
+
+plt.style.use('dark_background')
+
+ticker = yf.Ticker('THYAO.IS')
+
+hist = ticker.history(start='2026-01-01', end='2026-03-1')
+
+hist = hist[['Close']]
+
+hist.plot(figsize=(20,5))
+#aresay stratecisi uygula
+
+
+print(hist)
+print(hist['High'])
+
+import yfinance as yf
+EUROPE=yf.Market('THYAO.IS')
+status=EUROPE.status
+summary=EUROPE.summary
+------------------------------
+import yfinance as yf
+dat=yf.Ticker("THYAO.ıs")
+dat.history(period='1mo')
+df=dat.history(period='1mo')
+print(dat.info)
+
+

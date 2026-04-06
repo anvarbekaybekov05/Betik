@@ -1,0 +1,19 @@
+class smarthesapmakinesi:
+    def __init__(self):
+        self.memory=[]
+    def carpma(self,a,b):
+        self.sayi1 = a
+        self.sayi2 = b
+        sonuc=self.sayi1*self.sayi2
+        self.memory.append(sonuc)
+        print(sonuc)
+    def topla(self,a,b):
+        self.sayi1 = a
+        self.sayi2 = b
+        sonuc=self.sayi1+self.sayi2
+        self.memory.append(sonuc)
+        print(sonuc)
+A=smarthesapmakinesi()
+A.carpma(6,8)
+A.carpma(7,9)
+print(A.memory)
